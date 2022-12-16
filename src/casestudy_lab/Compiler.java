@@ -46,15 +46,18 @@ public class Compiler extends javax.swing.JFrame {
         codeText = new javax.swing.JLabel();
         tokenText = new javax.swing.JLabel();
         tokenLabel = new javax.swing.JLabel();
+        codeLabel = new javax.swing.JLabel();
         developersLabel = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Compiler");
 
         application.setBackground(new java.awt.Color(255, 153, 153));
+        application.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        file.setBackground(new java.awt.Color(255, 255, 255));
-        file.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        file.setBackground(new java.awt.Color(255, 255, 153));
+        file.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         file.setForeground(new java.awt.Color(0, 0, 0));
         file.setText("Open File");
         file.addActionListener(new java.awt.event.ActionListener() {
@@ -62,9 +65,10 @@ public class Compiler extends javax.swing.JFrame {
                 fileActionPerformed(evt);
             }
         });
+        application.add(file, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 31, 141, 45));
 
-        lexical.setBackground(new java.awt.Color(255, 255, 255));
-        lexical.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        lexical.setBackground(new java.awt.Color(255, 153, 51));
+        lexical.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lexical.setForeground(new java.awt.Color(0, 0, 0));
         lexical.setText("Lexical Analyzer");
         lexical.addActionListener(new java.awt.event.ActionListener() {
@@ -72,9 +76,10 @@ public class Compiler extends javax.swing.JFrame {
                 lexicalActionPerformed(evt);
             }
         });
+        application.add(lexical, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 94, 141, 42));
 
-        syntax.setBackground(new java.awt.Color(255, 255, 255));
-        syntax.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        syntax.setBackground(new java.awt.Color(255, 153, 51));
+        syntax.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         syntax.setForeground(new java.awt.Color(0, 0, 0));
         syntax.setText("Syntax Analyzer");
         syntax.addActionListener(new java.awt.event.ActionListener() {
@@ -82,9 +87,10 @@ public class Compiler extends javax.swing.JFrame {
                 syntaxActionPerformed(evt);
             }
         });
+        application.add(syntax, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 154, 141, 42));
 
-        semantic.setBackground(new java.awt.Color(255, 255, 255));
-        semantic.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        semantic.setBackground(new java.awt.Color(255, 153, 51));
+        semantic.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         semantic.setForeground(new java.awt.Color(0, 0, 0));
         semantic.setText("Semantic Analyzer");
         semantic.addActionListener(new java.awt.event.ActionListener() {
@@ -92,9 +98,10 @@ public class Compiler extends javax.swing.JFrame {
                 semanticActionPerformed(evt);
             }
         });
+        application.add(semantic, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 214, 141, 42));
 
-        clear.setBackground(new java.awt.Color(255, 255, 255));
-        clear.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        clear.setBackground(new java.awt.Color(204, 204, 204));
+        clear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         clear.setForeground(new java.awt.Color(0, 0, 0));
         clear.setText("Clear");
         clear.addActionListener(new java.awt.event.ActionListener() {
@@ -102,16 +109,17 @@ public class Compiler extends javax.swing.JFrame {
                 clearActionPerformed(evt);
             }
         });
+        application.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 274, 141, 42));
 
         resultPanel.setBackground(new java.awt.Color(255, 255, 255));
         resultPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         resultPanel.setForeground(new java.awt.Color(0, 0, 0));
 
-        resultText.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        resultText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         resultText.setForeground(new java.awt.Color(0, 0, 0));
         resultText.setToolTipText("");
 
-        resultLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        resultLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         resultLabel.setForeground(new java.awt.Color(0, 0, 0));
         resultLabel.setText("Result:");
 
@@ -134,90 +142,62 @@ public class Compiler extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        application.add(resultPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 31, 590, -1));
+
         codePanel.setBackground(new java.awt.Color(255, 255, 255));
         codePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        codeText.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        codeText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         codeText.setForeground(new java.awt.Color(0, 0, 0));
 
-        tokenText.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        tokenText.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tokenText.setForeground(new java.awt.Color(0, 0, 0));
 
-        tokenLabel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        tokenLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tokenLabel.setForeground(new java.awt.Color(0, 0, 0));
+
+        codeLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        codeLabel.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout codePanelLayout = new javax.swing.GroupLayout(codePanel);
         codePanel.setLayout(codePanelLayout);
         codePanelLayout.setHorizontalGroup(
             codePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(codePanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, codePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(codePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(codeText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(codePanelLayout.createSequentialGroup()
-                        .addComponent(tokenLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tokenText, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(tokenLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                    .addComponent(codeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(codePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tokenText, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+                    .addComponent(codeText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         codePanelLayout.setVerticalGroup(
             codePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(codePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(codeText, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(codePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(codeText, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(codePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tokenText, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tokenLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
-        developersLabel.setForeground(new java.awt.Color(0, 0, 0));
+        application.add(codePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 94, 590, 222));
+
+        developersLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        developersLabel.setForeground(new java.awt.Color(255, 255, 51));
         developersLabel.setText("Created by: Santos, Adi, & Maxwell");
+        application.add(developersLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 240, -1));
 
-        javax.swing.GroupLayout applicationLayout = new javax.swing.GroupLayout(application);
-        application.setLayout(applicationLayout);
-        applicationLayout.setHorizontalGroup(
-            applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(applicationLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(developersLabel)
-                    .addGroup(applicationLayout.createSequentialGroup()
-                        .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(semantic, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(syntax, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lexical, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(file, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31)
-                        .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(resultPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(codePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        applicationLayout.setVerticalGroup(
-            applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(applicationLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(file, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(resultPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(applicationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(applicationLayout.createSequentialGroup()
-                        .addComponent(lexical, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(syntax, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(semantic, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(codePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(developersLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casestudy_lab/compilerbg.jpg"))); // NOI18N
+        background.setText("jLabel1");
+        application.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 830, 350));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -240,6 +220,9 @@ public class Compiler extends javax.swing.JFrame {
         resultText.setText("");
         tokenText.setText("");
         tokenLabel.setText("");
+        codeText.setText("");
+        codeLabel.setText("");
+        
         
         //opens file explorer
         JFileChooser fileChooser = new JFileChooser(); 
@@ -251,6 +234,7 @@ public class Compiler extends javax.swing.JFrame {
             Scanner input = new Scanner(f);
             while(input.hasNext()){
                 String fileContent = input.nextLine();
+                codeLabel.setText("Code:");
                 codeText.setText(fileContent);
             }
         }
@@ -357,7 +341,7 @@ public class Compiler extends javax.swing.JFrame {
             }
             
             //if number of token is above 5
-            else if(token.length > 5){
+            if(token.length > 5){
                 condition = 2;
             }
             
@@ -379,6 +363,7 @@ public class Compiler extends javax.swing.JFrame {
                 for(String s : checking) {
                     if(s.contains("false")) {
                         condition = 3;
+                        break;
                     }
 
                     else{
@@ -522,6 +507,7 @@ public class Compiler extends javax.swing.JFrame {
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         resultText.setText(null);
         codeText.setText(null);
+        codeLabel.setText(null);
         tokenText.setText(null);
         tokenLabel.setText(null);
     }//GEN-LAST:event_clearActionPerformed
@@ -563,7 +549,9 @@ public class Compiler extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel application;
+    private javax.swing.JLabel background;
     private javax.swing.JButton clear;
+    private javax.swing.JLabel codeLabel;
     private javax.swing.JPanel codePanel;
     private javax.swing.JLabel codeText;
     private javax.swing.JLabel developersLabel;
